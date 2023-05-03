@@ -8,7 +8,6 @@ const AddProduct = () => {
     title: '',
     category: '',
     description: '',
-    id: '',
     image: '',
     price: '',
     count: '',
@@ -33,9 +32,6 @@ const AddProduct = () => {
     if (productData.description.trim() === "") {
       newErrors.description = "Description cannot be empty";
     }
-    if (productData.id.trim() === "") {
-      newErrors.id =  "ID cannot be empty";
-    }
     if (productData.image.trim() === "") {
       newErrors.image  =  "Image URL cannot be empty";
     }
@@ -59,7 +55,6 @@ const AddProduct = () => {
         title: '',
         category: '',
         description: '',
-        id: '',
         image: '',
         price: '',
         count: '',
@@ -97,12 +92,6 @@ const AddProduct = () => {
       </label>
         <textarea name="description" value={productData.description} onChange={handleChange} className="form-input"></textarea>
         {errors.description && <p className="form-error">{errors.description}</p>}
-
-      <label className="form-label">
-        ID:
-      </label>
-        <input type="number" name="id" value={productData.id} onChange={handleChange} className="form-input"/>
-        {errors.id && <p className="form-error">{errors.id}</p>}
 
       <label className="form-label">
         Image:
